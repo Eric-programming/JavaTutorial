@@ -1,4 +1,4 @@
-package JavaCollections;
+package Generics;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,7 +18,7 @@ public class GenericsPractice {
 		printlist(list1);
 
 		printlist(list2);
-		
+
 		printlist(list3);
 		////////////////////////////////////////////////////////////////////
 
