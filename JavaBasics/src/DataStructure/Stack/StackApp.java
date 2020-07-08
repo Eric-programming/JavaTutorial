@@ -24,16 +24,4 @@ public class StackApp {
             System.out.println(s.pop());
         }
     }
-
-    public static void tryDefaultStack(long[] items) {
-        Stack<Long> oldStack = new Stack<>();
-        for (int i = 0; i < items.length; i++) {
-            oldStack.push(items[i]);
-        }
-        System.out.printf("the size of the stack is %d", oldStack.size());
-        System.out.println();
-        while (!oldStack.isEmpty()) {
-            System.out.println(oldStack.pop());
-        }
-    }
 }
