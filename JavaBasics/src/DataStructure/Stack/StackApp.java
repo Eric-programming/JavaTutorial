@@ -1,7 +1,5 @@
 package DataStructure.Stack;
 
-import java.util.Stack;
-
 public class StackApp {
 
     public static void main(String[] args) {
