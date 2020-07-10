@@ -9,7 +9,7 @@ package Algorithms.Searching.BinarySearch;
  * 
  * output: index position or -1 if not found
  * 
- * 1) first = 0, last = length of a - 1, mid = null
+ * 1) first = 0, last = length of a - 1, mid = 0
  * 
  * 2) while first < last do the followings
  * 
