@@ -3,7 +3,7 @@ package Algorithms.Searching.RecurisiveSearch;
 public class RecursiveBinarySearch {
     public static void main(String[] args) {
         long[] items = new long[] { 1, 2, 3, 4, 5, 6, 7, 8 };
-
+        System.out.println(RecuriveBinarySearchMethod(items, 0, items.length - 1, 8));
     }
 
     /**
@@ -15,9 +15,9 @@ public class RecursiveBinarySearch {
      * Output: Find the index position for element x
      * 
      * 
-     * 1) mid =0, while f < l then do the followings
+     * 1)
      * 
-     * a. set mid = round down [(first + last) / 2]
+     * a. set mid = round [(f + l) / 2]
      * 
      * b. if a[mid] = x then return mid
      * 
@@ -29,7 +29,19 @@ public class RecursiveBinarySearch {
      * 2) return -1 if not found
      * 
      */
-    // public static Long RecuriveBinarySearchMethod() {
+    public static int RecuriveBinarySearchMethod(long[] a, int f, int l, long x) {
+        if (f <= l) {
+            int mid = (l + (f - l) / 2);// round
+            System.out.println("Mid point is =>" + mid);
+            if (a[mid] == x) {
+                return mid;
+            } else if (a[mid] > x) {
+                return RecuriveBinarySearchMethod(a, f, mid, x);
+            } else {
+                return RecuriveBinarySearchMethod(a, mid, l, x);
+            }
+        }
+        return -1;
 
-    // }
+    }
 }

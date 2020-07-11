@@ -13,7 +13,7 @@ package Algorithms.Searching.BinarySearch;
  * 
  * 2) while first < last do the followings
  * 
- * a. set mid = round down [(first + last) / 2]
+ * a. set mid = round [(first + last) / 2]
  * 
  * b. if a[mid] = x then return mid
  * 
@@ -26,7 +26,7 @@ public class BinarySearch {
         // Data Must be sorted
         long[] items = new long[] { 1, 2, 3, 4, 5, 6, 7, 8 };
         // System.out.println(BinarySearchMethod(items, items[3]));
-        System.out.println(BinarySearchMethod(items, Long.valueOf(0)));
+        System.out.println(BinarySearchMethod(items, Long.valueOf(8)));
 
     }
 
@@ -35,7 +35,7 @@ public class BinarySearch {
         int last = a.length - 1;
         int mid = 0;
         while (first < last) {
-            mid = (int) ((first + last) / 2);
+            mid = (last + (first - last) / 2);
             if (a[mid] == x) {
                 return mid;
             } else if (a[mid] < x) {
