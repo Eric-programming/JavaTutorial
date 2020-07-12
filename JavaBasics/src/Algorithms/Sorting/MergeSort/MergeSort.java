@@ -3,6 +3,8 @@ package Algorithms.Sorting.MergeSort;
 import java.util.Arrays;
 
 //nLog(n)
+//Pros = fast
+//Cons = takes space (tempLeftArray and temp right array)
 public class MergeSort {
     /**
      * Main Steps
@@ -39,7 +41,7 @@ public class MergeSort {
      * 
      * Output: Merge the array
      * 
-     * 1) set leftSize = m-f +1, set rightSize = l-m
+     * 1) set leftSize = m - f + 1, set rightSize = l - m
      * 
      * 2) set leftArray with the size of leftSize, set rightArray with the size of
      * rightSize
@@ -66,9 +68,6 @@ public class MergeSort {
      * 8) Copy remaining value from rightArray to a if any
      */
     public static void Merge(long[] a, int f, int m, int l) {
-        System.out.println("m" + m);
-        System.out.println("f" + f);
-        System.out.println("l" + l);
         // Create two subarrays
         int leftSize = m - f + 1;
         int rightSize = l - m;
@@ -83,8 +82,6 @@ public class MergeSort {
             rightArray[i] = a[i + m + 1];
         }
 
-        System.out.println(Arrays.toString(leftArray));
-        System.out.println(Arrays.toString(rightArray));
         // Sort and merge the arrays
         int leftIndex = 0, rightIndex = 0, index = f;
         while (leftIndex < leftSize && rightIndex < rightSize) {
