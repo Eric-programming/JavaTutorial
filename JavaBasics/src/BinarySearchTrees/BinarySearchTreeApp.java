@@ -7,6 +7,8 @@ public class BinarySearchTreeApp {
         for (int i = 0; i < items.length; i++) {
             tree.insert(i, items[i]);
         }
-
+        tree.printBinarySearchTree();
+        System.out.println("Max key is " + tree.findMax().key + " and Max Value is " + tree.findMax().value);
+        System.out.println("Min key is " + tree.findMin().key + " and Min Value is " + tree.findMin().value);
     }
 }
