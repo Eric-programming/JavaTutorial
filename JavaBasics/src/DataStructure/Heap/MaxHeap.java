@@ -1,7 +1,7 @@
 package DataStructure.Heap;
 
 //Formula: Math.floor((n-1)/2) is equals to the parent index in the array
-public class MaxHeap<T> {
+public class MaxHeap {
     private HeapNode[] heapArr;
     private int currentSize;// Current nodes in arr
 
@@ -59,9 +59,9 @@ public class MaxHeap<T> {
     }
 
     private boolean swapWithLargerChild(HeapNode node, int currentIndex) {
-        if (currentIndex < heapArr.length - 1) {
+        if (currentIndex < currentSize) {
             // Find left child and right child
-            int leftChildIndex = (currentIndex + 1) * 2;
+            int leftChildIndex = (currentIndex * 2) + 1;
             int rightChildIndex = leftChildIndex + 1;
 
             if (heapArr[leftChildIndex].getKey() > heapArr[rightChildIndex].getKey()) {
@@ -81,10 +81,28 @@ public class MaxHeap<T> {
         } else {
             int rootIndex = 0;
             // Replace root with last element
-            heapArr[rootIndex] = heapArr[currentSize];
+            heapArr[rootIndex] = heapArr[currentSize - 1];
             currentSize -= 1;
             // swap the largest child with the root value
-            swapWithLargerChild(heapArr[rootIndex], 0);
+            swapWithLargerChild(heapArr[rootIndex], rootIndex);
         }
     }
+
+    public void printMaxHeap() {
+        printMaxHeapMethod(0, 1);
+    }
+
+    private void printMaxHeapMethod(int startIndex, int endIndex) {
+        if (startIndex < heapArr.length) {
+            String s = "( ";
+            for (int j = startIndex; j < endIndex && j < currentSize; j++) {
+                s += heapArr[j].getKey() + " ";
+            }
+            s += ")";
+            System.out.println(s);
+            printMaxHeapMethod(endIndex, endIndex + (int) Math.pow(2, endIndex));
+        }
+
+    }
+
 }
