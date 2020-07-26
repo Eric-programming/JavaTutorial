@@ -17,28 +17,43 @@ import java.util.Hashtable;
 public class HashTableApp {
 
     public static void main(final String[] args) {
-        int[] arr = new int[] { 0, 1, 2, 3, 4, 5 };
+        int[] arr = new int[] { 55, 22, 44, 66, 33, 99 };
+        useHashTable(arr);
+        // useJavaHashTable(arr);
 
+    }
+
+    public static void useHashTable(int[] arr) {
+        HashTableClass htc = new HashTableClass(arr.length);
+        for (int i = 0; i < arr.length; i++) {
+            htc.put(i, arr[i]);
+        }
+        System.out.println(htc.getValue(5));// it should be 99
+        htc.removeValue(5);// 99 should be gone
+        htc.put(5, 123);
+    }
+
+    public static void useJavaHashTable(int[] arr) {
         // Inserting
         Hashtable<Integer, String> table = new Hashtable<Integer, String>();
         for (int i = 0; i < arr.length; i++) {
-            table.put(i, "hello" + arr[i]);
+            table.put(i, "hello" + arr[i]);// add
         }
         System.out.println("Inserted values to the table =>" + table);
 
         // Remove value
-        table.remove(arr[0]);
-        System.out.println("Key arr[0] removed from the table =>" + table);
+        table.remove(0);
+        System.out.println(table);
 
         // Replace value
-        table.put(arr[1], "replace" + arr[1]);
-        System.out.println("Replace value of arr[1] => " + table);
+        table.put(1, "replace" + arr[1]);
+        System.out.println("Replace key of 1 => " + table);
 
         // Compute if absent
-        table.computeIfAbsent(arr[0], j -> "number" + arr[0]);
-        System.out.println("insert a value to key at arr[0] if key is not associated with a value" + table);
-        table.computeIfAbsent(arr[0], j -> "NUMBER" + arr[0]);
-        System.out.println("insert a value to key at arr[0] if key is not associated with a value" + table);
+        table.computeIfAbsent(0, j -> "number" + arr[0]);
+        System.out.println("Successful insert a value to key at 0 if key is not associated with a value" + table);
+        table.computeIfAbsent(0, j -> "NUMBER" + arr[0]);
+        System.out.println("Fail to insert a value to key at 0 if key is not associated with a value" + table);
 
         // Check if a value exists
         System.out.println("Is value 'number' exists in the hashtable=> " + table.contains("number"));
