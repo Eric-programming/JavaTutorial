@@ -1,5 +1,8 @@
 package DataStructure.HashTable;
 
+/**
+ * Hashing has on average O(1) time complexity when insert, delete, seach
+ */
 public class HashTableClass {
     private HashTableNode[] arr;
 
@@ -17,9 +20,21 @@ public class HashTableClass {
 
     public void put(int key, Object value) {
         int hashcodeIndex = getHash(key);
-        HashTableNode n = new HashTableNode(key, value);
-        n.setNext(arr[hashcodeIndex]);// Insert from first
-        arr[hashcodeIndex] = n;
+        HashTableNode head = arr[hashcodeIndex];
+        boolean insert = true;
+        while (head.getNext() != null) {
+            if (key == head.getKey()) {
+                head.setValue(value);
+                insert = false;
+                break;
+            }
+            head = head.getNext();
+        }
+        if (insert) {
+            HashTableNode n = new HashTableNode(key, value);
+            n.setNext(arr[hashcodeIndex]);// Insert from first
+            arr[hashcodeIndex] = n;
+        }
     }
 
     public HashTableNode getValue(int key) {

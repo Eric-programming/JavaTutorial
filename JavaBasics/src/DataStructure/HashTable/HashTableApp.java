@@ -28,7 +28,7 @@ public class HashTableApp {
         for (int i = 0; i < arr.length; i++) {
             htc.put(i, arr[i]);
         }
-        System.out.println(htc.getValue(5));// it should be 99
+        System.out.println(htc.getValue(5).getValue());// it should be 99
         htc.removeValue(5);// 99 should be gone
         htc.put(5, 123);
     }
