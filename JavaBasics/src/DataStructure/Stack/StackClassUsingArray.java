@@ -1,16 +1,16 @@
 package DataStructure.Stack;
 
 /**
- * New StackClass
+ * New StackClassUsingArray
  */
-public class StackClass {
+public class StackClassUsingArray {
     private int maxSize;
     private long[] stackArray;
     private int top;
     // Optional
     private int empty = -1;
 
-    public StackClass(int size) {
+    public StackClassUsingArray(int size) {
         super();
         maxSize = size;
         stackArray = new long[size];

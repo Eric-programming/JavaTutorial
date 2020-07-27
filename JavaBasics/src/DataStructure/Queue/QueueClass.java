@@ -1,5 +1,12 @@
 package DataStructure.Queue;
 
+/**
+ * Searching O(n)
+ * 
+ * Delete O(1)
+ * 
+ * Add O(1)
+ */
 public class QueueClass<T> {
     private static class Node<T> {
         private T data;
