@@ -1,4 +1,4 @@
-package BinarySearchTrees;
+package DataStructure.Tree.BinarySearchTrees;
 
 public class BinarySearchTreeNode<T> {
     int key;

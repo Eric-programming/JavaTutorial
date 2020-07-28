@@ -1,4 +1,4 @@
-package BinarySearchTrees;
+package DataStructure.Tree.BinarySearchTrees;
 
 public class BinarySearchTreeApp {
     public static void main(String[] args) {

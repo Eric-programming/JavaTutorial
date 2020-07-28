@@ -7,7 +7,7 @@ package DataStructure.Queue;
  * 
  * Add O(1)
  */
-public class QueueClass<T> {
+public class QueueClassUsingLinkedList<T> {
     private static class Node<T> {
         private T data;
         private Node<T> next;
@@ -23,7 +23,7 @@ public class QueueClass<T> {
     private Node<T> back;
     private int currentSize;
 
-    public QueueClass(int max) {
+    public QueueClassUsingLinkedList(int max) {
         super();
         maxSize = max;
         currentSize = 0;

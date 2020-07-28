@@ -11,10 +11,25 @@ public class StackApp {
         // tryNewStackUsingArray(longArr);
 
         // New Stack using Dynamic Array
-        tryNewStackUsingDynamicArray(longArr);
+        // tryNewStackUsingDynamicArray(longArr);
+
+        // New Stack using Linkedlist
+        tryNewStackUsingLinkedList(longArr);
 
         // Try Out Default Stack
         // tryDefaultStack(longArr);
+    }
+
+    public static void tryNewStackUsingLinkedList(long[] longArr) {
+        StackClassUsingLinkedList demoStackUsingDynamicArr = new StackClassUsingLinkedList();
+        for (int i = 0; i < longArr.length; i++) {
+            demoStackUsingDynamicArr.push(longArr[i]);
+        }
+        demoStackUsingDynamicArr.push(60);// <= this should be inserated because there is no size limit
+        demoStackUsingDynamicArr.push(70);// <= this should be inserated because there is no size limit
+        while (!demoStackUsingDynamicArr.isEmpty()) {
+            System.out.println(demoStackUsingDynamicArr.pop());
+        }
     }
 
     public static void tryNewStackUsingDynamicArray(long[] longArr) {
