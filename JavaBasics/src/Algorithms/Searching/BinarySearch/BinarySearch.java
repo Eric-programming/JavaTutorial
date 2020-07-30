@@ -35,7 +35,7 @@ public class BinarySearch {
         int last = a.length - 1;
         int mid = 0;
         while (first < last) {
-            mid = (last + (first - last) / 2);
+            mid = (last + (first - last) / 2);// Round up
             if (a[mid] == x) {
                 return mid;
             } else if (a[mid] < x) {
@@ -46,4 +46,5 @@ public class BinarySearch {
         }
         return -1;
     }
+
 }

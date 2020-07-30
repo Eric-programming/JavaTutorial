@@ -1,6 +1,8 @@
 package DataStructure.Heap;
 
-//Formula: Math.floor((n-1)/2) is equals to the parent index in the array
+//Formula find left child: 2n+1
+//Formula find right child: 2n+2
+//Formula find parent index: Math.floor((n-1)/2)
 public class MaxHeap {
     private HeapNode[] heapArr;
     private int currentSize;// Current nodes in arr
