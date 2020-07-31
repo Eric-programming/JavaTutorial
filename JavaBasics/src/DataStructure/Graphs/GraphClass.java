@@ -34,11 +34,13 @@ public class GraphClass<T> {
         }
     }
 
+    // Connection between two vertex = one edge
     public int getEdgesCount() {
         int count = 0;
         for (T e : map.keySet()) {
             count += map.get(e).size();
         }
+        // Filter duplicates to get the counts
         if (undirectional) {
             count /= 2;
         }

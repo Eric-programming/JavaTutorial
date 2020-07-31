@@ -1,5 +1,9 @@
 package DataStructure.Graphs;
 
+/**
+ * Graph is a data structure that contains a list of nodes or vertex that
+ * connected
+ */
 public class GraphApp {
     public static void main(String[] args) {
         long[] arr = new long[] { 1, 2, 3, 4, 5, 6 };
