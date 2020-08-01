@@ -4,6 +4,8 @@ import java.util.*;
 
 /**
  * Traversing Graph using Depth First Search
+ * 
+ * Backtracking = trace one step back
  */
 public class DFS {
 
