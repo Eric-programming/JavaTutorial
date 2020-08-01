@@ -1,4 +1,4 @@
-package JavaCollections;
+package DataStructure.DynamicArray;
 
 import java.util.ArrayList;
 import java.util.Collections;

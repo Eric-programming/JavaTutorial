@@ -1,4 +1,4 @@
-package DataStructure.HashTable;
+package DataStructure.HashTable.DemoHashTable;
 
 /**
  * Hashing has on average O(1) time complexity when insert, delete, seach

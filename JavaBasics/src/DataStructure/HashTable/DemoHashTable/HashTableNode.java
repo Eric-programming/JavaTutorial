@@ -1,4 +1,4 @@
-package DataStructure.HashTable;
+package DataStructure.HashTable.DemoHashTable;
 
 public class HashTableNode {
     private int key;

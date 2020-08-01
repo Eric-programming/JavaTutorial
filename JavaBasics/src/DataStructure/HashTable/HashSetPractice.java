@@ -1,6 +1,7 @@
-package JavaCollections;
+package DataStructure.HashTable;
 
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Hashset is a Java Collection that uses a hash table for storing data.
@@ -10,7 +11,7 @@ import java.util.HashSet;
 public class HashSetPractice {
 	public static void main(String[] args) {
 		// Set removes the duplicates
-		HashSet<Integer> simpleHashSet = new HashSet<>();
+		Set<Integer> simpleHashSet = new HashSet<>();
 		simpleHashSet.add(1);
 		simpleHashSet.add(1);
 		simpleHashSet.add(1);
@@ -18,7 +19,7 @@ public class HashSetPractice {
 		System.out.println(simpleHashSet);// 1
 
 		// Hashset with objects
-		HashSet<HashSetHuman> persons = new HashSet<>();
+		Set<HashSetHuman> persons = new HashSet<>();
 		persons.add(new HashSetHuman("Eric", 100));
 		persons.add(new HashSetHuman("A", 1000));
 		persons.add(new HashSetHuman("Eric", 100));// This will become a duplicate

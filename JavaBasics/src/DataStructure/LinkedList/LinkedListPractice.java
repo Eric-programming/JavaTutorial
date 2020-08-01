@@ -1,5 +1,6 @@
-package JavaCollections;
+package DataStructure.LinkedList;
 
+import java.util.Collections;
 import java.util.LinkedList;
 
 /**
@@ -15,6 +16,16 @@ public class LinkedListPractice {
 		nums.add(12);
 		nums.add(34);
 		System.out.println(nums);
+		nums.add(1);
+		// Sort
+		Collections.sort(nums);
+		// Remove last node
+		nums.removeLast();
+		// Remove first node
+		nums.remove(0);
+		// Clear the linkedlist
+		nums.clear();
+
 	}
 
 }
