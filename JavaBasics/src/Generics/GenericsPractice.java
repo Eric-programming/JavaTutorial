@@ -1,6 +1,6 @@
 package Generics;
 
-import java.util.ArrayList;
+// import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -22,15 +22,18 @@ public class GenericsPractice {
 		printlist(list3);
 		////////////////////////////////////////////////////////////////////
 
-		ArrayList<GenericsJack> jack = new ArrayList<>();// Child Class of GenericsTom
-		ArrayList<GenericsSam> sam = new ArrayList<>();// Parent Class of GenericsTom
-		// UpperBound
-		ArrayList<? extends GenericsTom> tomUpperBound = new ArrayList<>();
-		tomUpperBound = jack;
-		// LowerBound
-		ArrayList<? super GenericsTom> tomLowerBound = new ArrayList<>();
-		tomLowerBound = sam;
-		tomLowerBound = new ArrayList<Object>();
+		// ArrayList<GenericsJack> jack = new ArrayList<>();// GenericsTom's childclass
+
+		// ArrayList<GenericsSam> sam = new ArrayList<>();// Parent Class of GenericsTom
+
+		// ArrayList<? extends GenericsTom> tomUpperBound = new ArrayList<>();
+		// tomUpperBound = jack;
+
+		// ArrayList<? super GenericsTom> tomLowerBound = new ArrayList<>();
+
+		// tomLowerBound = sam;
+
+		// tomLowerBound = new ArrayList<Object>();
 
 	}
 

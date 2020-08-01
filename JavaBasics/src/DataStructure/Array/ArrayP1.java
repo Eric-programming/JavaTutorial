@@ -3,12 +3,10 @@ package DataStructure.Array;
 import java.util.ArrayList;
 
 //Array: a group of similar type variables. It can contains primitives and non-primitivies
-//ex. int[] name = new int[2] {1,2};
-/**
- * ArrayP1
- */
+//ex. int[] name = new int[2];
+//ex. int[] name = {1,2,3,4,5};
+//ex. int[] name = new int[6] {1,2,3,4,5,6};
 public class ArrayP1 {
-
     public static void main(String[] args) {
         int[] t1 = { 1, 1, 1, 0, 0 };// 4
 
@@ -49,7 +47,7 @@ public class ArrayP1 {
      * 
      * Inputs: a (array)
      * 
-     * Outputs: longest sequence
+     * Outputs: longest sequence in integer
      * 
      * 1) set max = 0
      * 
