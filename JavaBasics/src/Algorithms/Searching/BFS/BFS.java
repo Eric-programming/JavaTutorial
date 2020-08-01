@@ -1,18 +1,13 @@
-package DataStructure.Graphs.DFS;
+package Algorithms.Searching.BFS;
 
 import java.util.*;
 
-/**
- * Traversing Graph using Depth First Search
- * 
- * Backtracking = trace one step back
- */
-public class DFS {
+public class BFS {
 
     private Map<Integer, List<Integer>> map;
 
     // Constructor
-    public DFS() {
+    public BFS() {
         map = new HashMap<>();
     }
 
@@ -23,23 +18,29 @@ public class DFS {
         map.get(source).add(destination);
     }
 
-    public void DFSRecur(int source, Set<Integer> visited) {
+    public void BFSRecur(int source, Set<Integer> visited, Queue<Integer> storage) {
         // Mark the current node as visited and print it
         visited.add(source);
         System.out.println(source);
 
-        // Use recursion to get all vertices adjacents to this current vertex
+        // Loop through them and then we look at their children
         Iterator<Integer> i = map.get(source).listIterator();
         while (i.hasNext()) {
             int nextVertex = i.next();
-            if (!visited.contains(nextVertex))
-                DFSRecur(nextVertex, visited);// Visit n and n's children.
+            if (!visited.contains(nextVertex)) {
+                visited.add(nextVertex);
+                storage.add(nextVertex);
+            }
+        }
+        while (storage.isEmpty() == false) {
+            BFSRecur(storage.poll(), visited, storage);
         }
     }
 
-    public void DFSMethod(int source) {
+    public void BFSMethod(int source) {
+        Queue<Integer> storage = new LinkedList<>();
         Set<Integer> visited = new HashSet<>();
         // Traverse the graph
-        DFSRecur(source, visited);
+        BFSRecur(source, visited, storage);
     }
 }

@@ -1,9 +1,8 @@
-package DataStructure.Graphs.DFS;
+package Algorithms.Searching.BFS;
 
-public class DFSApp {
+public class BFSApp {
     public static void main(String args[]) {
-        // Undirectional Graph
-        DFS g = new DFS();
+        BFS g = new BFS();
 
         g.addEdge(1, 2);
         g.addEdge(1, 4);
@@ -14,14 +13,14 @@ public class DFSApp {
         g.addEdge(3, 4);
         g.addEdge(3, 2);
 
-        System.out.println("Following is Depth First Traversal (starting from vertex 2)");
+        System.out.println("Following is Breadth First Traversal (starting from vertex 2)");
 
-        g.DFSMethod(2);// start from 2 // 2 1 4 3
+        g.BFSMethod(2);// 2 1 3 4
 
-        System.out.println("Following is Depth First Traversal with Advanced data (starting from vertex 2)");
+        System.out.println("Following is Breadth First Traversal Advanced (starting from vertex 2)");
 
         // Advanced Example
-        DFS g1 = new DFS();// Undirectional
+        BFS g1 = new BFS();// Undirectional
         g1.addEdge(0, 1);
         g1.addEdge(0, 4);
         g1.addEdge(4, 1);
@@ -37,8 +36,7 @@ public class DFSApp {
         g1.addEdge(1, 3);
         g1.addEdge(1, 2);
 
-        g1.DFSMethod(2);// 2 1 0 4 3
+        g1.BFSMethod(2);// 2 1 3 0 4
 
     }
-    // Side note: DFS Search can use Stack instead of recursion.
 }
