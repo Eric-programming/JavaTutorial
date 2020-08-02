@@ -55,10 +55,11 @@ public class ArrayP1 {
      * 
      * then set count = 1
      * 
-     * for each index l = i -1 to 0, if a[l] = 1 then count increment by 1
+     * for each index l = i -1 to 0, if a[l] = 1 then count increment by 1 else
+     * break the for loop
      * 
-     * for each index r = i + 1 to a.length - 1, if a[r] = 1 then count increment by
-     * 1
+     * for each index r = i + 1 to a.length - 1, if a[r] = 1 then count increment 1
+     * by else break the for loop
      * 
      * if max < count then max = count
      * 
@@ -103,7 +104,7 @@ public class ArrayP1 {
      * 
      * Inputs: a (array)
      * 
-     * Outputs: longest sequence
+     * Outputs: longest sequence in integer
      * 
      * 1) set max = 0, temp = 0, tempA = new array list
      * 
@@ -145,7 +146,6 @@ public class ArrayP1 {
                 temp = 0;
             }
             tempA.add(0);
-
         }
         // Clean up
         if (temp > 0) {
