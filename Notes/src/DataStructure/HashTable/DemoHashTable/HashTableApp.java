@@ -3,24 +3,24 @@ package DataStructure.HashTable.DemoHashTable;
 import java.util.Hashtable;
 
 /**
- * HashTableApp
+ * Hash table is a data structure that maps keys to values.
  * 
- * Pro: O(1) for retrive data & inseration & deletion
+ * Process:
  * 
- * Con:
+ * 1. Compute the key to hash code
  * 
- * Concepts: Key => Value
+ * 2. convert hashcode to a index in the array
  * 
- * key(Any object) => Hashcode => index => retrive the data in the array at a
- * given index
+ * 3. then insert or delete or search the linkedlist
+ * 
+ * Time Complexity: O(1) - O(n) on average depends on the collisions
  */
 public class HashTableApp {
 
     public static void main(final String[] args) {
         int[] arr = new int[] { 55, 22, 44, 66, 33, 99 };
-        useHashTable(arr);
-        // useJavaHashTable(arr);
-
+        // useHashTable(arr);
+        useJavaHashTable(arr);
     }
 
     public static void useHashTable(int[] arr) {
@@ -28,7 +28,7 @@ public class HashTableApp {
         for (int i = 0; i < arr.length; i++) {
             htc.put(i, arr[i]);
         }
-        System.out.println(htc.getValue(5).getValue());// it should be 99
+        System.out.println(htc.getValue(5));// it should be 99
         htc.removeValue(5);// 99 should be gone
         htc.put(5, 123);
     }

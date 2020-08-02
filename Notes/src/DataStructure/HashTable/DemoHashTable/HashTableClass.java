@@ -37,12 +37,12 @@ public class HashTableClass {
         }
     }
 
-    public HashTableNode getValue(int key) {
+    public Object getValue(int key) {
         int hashcodeIndex = getHash(key);
         HashTableNode head = arr[hashcodeIndex];
         while (head.getNext() != null) {
             if (head.getKey() == key) {
-                return head;
+                return head.getValue();
             }
         }
         return null;
