@@ -1,5 +1,0 @@
-- Linear(Not Fasy) = Single loop = 0(n)
-- Constant Time (Fast) Tells return the element when the index is given = 0(1)
-- Quadratic (too slow) = Nested loops = 0(n^2)
-- Cubic = 3 nested loops = 0(n^3)
-- Expoential = 0(n^n)

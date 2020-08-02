@@ -3,11 +3,11 @@ package DataStructure.DynamicArray;
 import java.util.Arrays;
 
 /**
- * Search O(n)
+ * Delete O(1) - O(n) on average because sometimes we have double the array size
+ * or sometimes we don't
  * 
- * Delete O(n)
- * 
- * Insert O(n)
+ * Insert O(1) - O(n) on average because sometimes we have double the array size
+ * or sometimes we don't
  * 
  * Access O(1)
  * 
@@ -37,13 +37,14 @@ public class DynamicArrayClass {
     }
 
     private void ensureCapacity() {
-        int lastIndex = getSize();
-        if (currentIndex == lastIndex - 1) {
+        int length = getSize();
+        int lastIndex = length - 1;
+        if (currentIndex == lastIndex) {
             // expand the array if full
-            arr = Arrays.copyOf(arr, lastIndex * 2);
-        } else if (currentIndex < lastIndex / 2 && currentIndex > -1) {
+            arr = Arrays.copyOf(arr, length * 2);
+        } else if (currentIndex < length / 2 && currentIndex > -1) {
             // Ensure there is at least 1 element in array
-            arr = Arrays.copyOf(arr, Math.max(lastIndex / 2, 1));
+            arr = Arrays.copyOf(arr, Math.max(length / 2, 1));
         }
     }
 

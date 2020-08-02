@@ -1,5 +1,9 @@
 package DataStructure.DynamicArray;
 
+/**
+ * Dynamic Array is an array that can resize itself instead of fixed length. It
+ * still provides Constant time or O(1) access just like array.
+ */
 public class DynamicArrayApp {
     public static void main(String[] args) {
         long[] longArr = new long[] { 1, 2, 3, 4, 5, 6, 7, 8 };
