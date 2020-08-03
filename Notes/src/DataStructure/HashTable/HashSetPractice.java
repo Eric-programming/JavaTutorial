@@ -4,9 +4,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Hashset is a Java Collection that uses a hash table for storing data.
- * Basically it uses the key to convert to a hashcode and then use the hashcode
- * to store the data.
+ * Hashset is a Java Collection a set of items that must be unique. Basically it
+ * uses the value to convert to a hashcode and then use the hashcode to store
+ * the data.
  */
 public class HashSetPractice {
 	public static void main(String[] args) {
