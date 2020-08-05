@@ -25,43 +25,38 @@ public class IsPermutation {
     /**
      * Worst Solution
      *
-     * Time Complexity = nlogn
+     * Time complexity: nlogn
      */
     public static boolean IsPermutation_worst(String t1, String t2) {
-        char[] t1Arr = t1.toCharArray();
+        char[] t1CharArr = t1.toCharArray();
 
-        char[] t2Arr = t2.toCharArray();
+        char[] t2CharArr = t2.toCharArray();
 
-        Arrays.sort(t1Arr);
+        Arrays.sort(t1CharArr);
 
-        Arrays.sort(t2Arr);
+        Arrays.sort(t2CharArr);
 
-        return Arrays.equals(t1Arr, t2Arr);
-
+        return Arrays.equals(t1CharArr, t2CharArr);
     }
 
     /**
      * Good Solution
-     * 
-     * Time complexity = n
+     *
+     * Time complexity: n
      */
 
     public static boolean IsPermutation_Good(String t1, String t2) {
-        char[] t1Arr = t1.toCharArray();
+        char[] t1CharArr = t1.toCharArray();
 
-        char[] t2Arr = t2.toCharArray();
+        char[] t2CharArr = t2.toCharArray();
 
-        int totalT1 = 0;
-
-        int totalT2 = 0;
-
-        for (int i = 0; i < t1Arr.length; i++) {
-            totalT1 += (int) t1Arr[i];
+        int t1Total = 0, t2Total = 0;
+        for (int i = 0; i < t1CharArr.length; i++) {
+            t1Total += t1CharArr[i];
         }
-        for (int i = 0; i < t2Arr.length; i++) {
-            totalT2 += (int) t2Arr[i];
+        for (int i = 0; i < t2CharArr.length; i++) {
+            t2Total += t2CharArr[i];
         }
-        return totalT1 == totalT2;
-
+        return t1Total == t2Total;
     }
 }
