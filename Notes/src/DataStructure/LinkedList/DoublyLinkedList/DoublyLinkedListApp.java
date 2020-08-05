@@ -7,7 +7,7 @@ public class DoublyLinkedListApp {
         System.out.println(dll.isEmpty());// True
         // Insert to Head
         for (int i = 0; i < items.length; i++) {
-            dll.insertHead(items[i]);
+            dll.insertTail(items[i]);
         }
         dll.displayList();// Display
 

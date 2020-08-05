@@ -11,5 +11,13 @@ public class CircularLinkedListApp {
         cll.deleteHead();
         cll.insertTail(items[2] * 200);
         cll.displayList();
+
+        // Insert Tail
+        cll.clearUp();
+
+        for (int i = 0; i < items.length; i++) {
+            cll.insertTail(items[i]);
+        }
+        cll.displayList();
     }
 }

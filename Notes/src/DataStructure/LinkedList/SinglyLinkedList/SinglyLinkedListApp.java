@@ -1,5 +1,9 @@
 package DataStructure.LinkedList.SinglyLinkedList;
 
+/**
+ * Singly linked list is a data structure that is a sequence of nodes, and each
+ * node points to the next node.
+ */
 public class SinglyLinkedListApp {
     public static void main(String[] args) {
         long[] items = new long[] { 1, 2, 3, 4, 5, 6, 7, 8 };
