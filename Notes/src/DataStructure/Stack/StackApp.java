@@ -14,10 +14,10 @@ public class StackApp {
         // tryNewStackUsingDynamicArray(longArr);
 
         // New Stack using Linkedlist
-        tryNewStackUsingLinkedList(longArr);
+        // tryNewStackUsingLinkedList(longArr);
 
         // Try Out Default Stack
-        // tryDefaultStack(longArr);
+        tryDefaultStack(longArr);
     }
 
     public static void tryNewStackUsingLinkedList(long[] longArr) {
@@ -49,8 +49,8 @@ public class StackApp {
         for (int i = 0; i < longArr.length; i++) {
             demoStackUsingArr.push(longArr[i]);
         }
-        demoStackUsingArr.push(60);// <= this shouldn't be inserated because the size is full
-        demoStackUsingArr.push(70);// <= this shouldn't be inserated because the size is full
+        demoStackUsingArr.push(60);// <= this shouldn't be enter because the size is full
+        demoStackUsingArr.push(70);// <= this shouldn't be enter because the size is full
         while (!demoStackUsingArr.isEmpty()) {
             System.out.println(demoStackUsingArr.pop());
         }

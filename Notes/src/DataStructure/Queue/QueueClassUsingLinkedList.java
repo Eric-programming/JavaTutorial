@@ -41,7 +41,7 @@ public class QueueClassUsingLinkedList<T> {
                 back.next = node;
             }
             back = node;
-            currentSize += 1;
+            currentSize++;
             System.out.printf("Value %s is inserted \n", v.toString());
         }
     }
@@ -57,7 +57,7 @@ public class QueueClassUsingLinkedList<T> {
                 front = null;
                 back = null;
             }
-            currentSize -= 1;
+            currentSize--;
             System.out.printf("Value %s is removed \n", temp.toString());
         }
     }

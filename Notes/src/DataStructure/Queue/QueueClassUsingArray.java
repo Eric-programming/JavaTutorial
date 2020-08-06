@@ -27,16 +27,17 @@ public class QueueClassUsingArray {
         if (isEmpty()) {
             System.out.println("Sorry we can't dequeue because queue is empty");
         } else {
+            // delete the first element
             for (int i = 1; i < currentSize; i++) {
-                arr[i - 1] = arr[i];
+                arr[i - 1] = arr[i];// slide all values to the left by 1
             }
-            currentSize -= 1;
+            currentSize--;
             arr[currentSize] = null;
         }
     }
 
     public Long peek() {
-        return arr[0];
+        return arr[0];// first value
     }
 
     public boolean isFull() {

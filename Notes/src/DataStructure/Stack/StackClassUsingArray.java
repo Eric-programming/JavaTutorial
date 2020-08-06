@@ -8,7 +8,7 @@ public class StackClassUsingArray {
     private long[] stackArray;
     private int top;
     // Optional
-    private int empty = -1;
+    private final int empty = -1;
 
     public StackClassUsingArray(int size) {
         super();
@@ -21,7 +21,7 @@ public class StackClassUsingArray {
         if (isFull()) {
             System.out.println("Sorry, it is full!");
         } else {
-            top += 1;
+            top++;
             stackArray[top] = v;
         }
     }
@@ -29,7 +29,7 @@ public class StackClassUsingArray {
     public long pop() {
         if (!isEmpty()) {
             long temp = stackArray[top];
-            top -= 1;
+            top--;
             return temp;
         } else {
             return empty;

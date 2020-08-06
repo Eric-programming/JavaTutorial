@@ -1,11 +1,15 @@
 package DataStructure.Queue;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 // First-In-First-Out
 public class QueueApp {
     public static void main(String[] args) {
-        // long[] longArr = new long[] { 1, 2, 3, 4, 5, 6, 7, 8 };
-        // useQueueLinkedList(longArr);
+        long[] longArr = new long[] { 1, 2, 3, 4, 5, 6, 7, 8 };
         // useQueueArrayClass(longArr);
+        // useQueueLinkedList(longArr);
+        useDefaultQueue(longArr);
 
     }
 
@@ -43,5 +47,17 @@ public class QueueApp {
         q.dequeue();// <= Not going to work
 
         q.printQueue();
+    }
+
+    public static void useDefaultQueue(long[] longArr) {
+        Queue<Long> myQueue = new LinkedList<>();
+
+        for (int i = 0; i < longArr.length; i++) {
+            myQueue.add(longArr[i]);
+        }
+        System.out.println(myQueue);
+
+        myQueue.remove();
+        System.out.println(myQueue);
     }
 }
