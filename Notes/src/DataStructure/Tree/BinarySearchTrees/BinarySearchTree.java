@@ -3,10 +3,6 @@ package DataStructure.Tree.BinarySearchTrees;
 public class BinarySearchTree<T> {
     private BinarySearchTreeNode<T> root;
 
-    public BinarySearchTree() {
-        super();
-    }
-
     private BinarySearchTreeNode<T> insertBinarySearchTreeNode(BinarySearchTreeNode<T> node, int key, T v) {
         if (node == null) {
             node = new BinarySearchTreeNode<T>(key, v);
@@ -86,28 +82,29 @@ public class BinarySearchTree<T> {
         }
         // 1)Find the node
         if (currentNode.key > key) {
-            currentNode.leftChild = rootWithDeletedNode(key, currentNode.leftChild);
+            currentNode.leftChild = rootWithDeletedNode(key, currentNode.leftChild);// Make change at the left
         } else if (currentNode.key < key) {
-            currentNode.rightChild = rootWithDeletedNode(key, currentNode.rightChild);
+            currentNode.rightChild = rootWithDeletedNode(key, currentNode.rightChild);// Make change at the right
         } else if (currentNode.key == key) {
             // 2)Once we found it we detect if the root is only one child or no child
             if (currentNode.leftChild == null) {
                 return currentNode.rightChild;
             } else if (currentNode.rightChild == null) {
                 return currentNode.leftChild;
-            } else {
-                // 3)if root has two children
+            }
+            // 3)if root has two children
+            else {
                 BinarySearchTreeNode<T> tempNode = findMinMethod(currentNode.rightChild);
                 currentNode.key = tempNode.key;
                 currentNode.value = tempNode.value;// The rest stays the same (left child and right child)
                 // 4) Delete the successor and we know that it is at the right child side
-                currentNode.rightChild = rootWithDeletedNode(key, currentNode.rightChild);
+                currentNode.rightChild = rootWithDeletedNode(currentNode.key, currentNode.rightChild);
             }
         }
         return currentNode;
     }
 
-    // Delete Node(s)
+    // Delete Node
     public void deleteNode(int key) {
         root = rootWithDeletedNode(key, root);
     }

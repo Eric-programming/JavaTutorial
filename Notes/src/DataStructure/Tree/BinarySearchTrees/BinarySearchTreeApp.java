@@ -1,23 +1,40 @@
 package DataStructure.Tree.BinarySearchTrees;
 
+/**
+ * Binary Search Tree is a binary tree that each nodes has a left child that is
+ * less than or equal to current node. And right child must be greater than the
+ * current node
+ */
 public class BinarySearchTreeApp {
     public static void main(String[] args) {
-        long[] items = new long[] { 8, 7, 6, 5, 4, 3, 2, 1 };
-        BinarySearchTree<Long> tree = new BinarySearchTree<>();
-        for (int i = 0; i < items.length; i++) {
-            tree.insert(i, items[i]);
-        }
+        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
+
+        // Insertion
+        tree.insert(8, 100);
+        tree.insert(4, 101);
+        tree.insert(10, 102);
+        tree.insert(2, 103);
+        tree.insert(20, 104);
+        tree.insert(6, 105);
+
+        // Print
         tree.printBinarySearchTree();
+
+        // Max
         System.out.println("Max key is " + tree.findMax().key + " and Max Value is " + tree.findMax().value);
+        // Min
         System.out.println("Min key is " + tree.findMin().key + " and Min Value is " + tree.findMin().value);
 
-        System.out.println("Index 10 is " + tree.findNode(10));
-        System.out.println("Index 5 is " + tree.findNode(5).value);
+        // Find Nodes
+        System.out.println("Index 10 is " + tree.findNode(10) != null ? tree.findNode(10).value : null);
+        System.out.println("Index 4 is " + tree.findNode(4) == null ? null : tree.findNode(4).value);
 
+        // Delete Node
         tree.deleteNode(1);
         tree.deleteNode(10);
-        tree.deleteNode(3);
+        tree.deleteNode(4);
 
+        // Print
         tree.printBinarySearchTree();
 
     }
