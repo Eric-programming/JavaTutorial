@@ -1,8 +1,9 @@
 package SOLID.OpenClosed;
 
 /**
- * Any new features should be implemented by adding another new element
- * (classes, methods, or attributes) instead of change the current element.
+ * If we want to add another feature to the existing class or element, we should
+ * extend and create a new class or element without going into the existing
+ * class and change it.
  */
 public class OpenClosed_Bad_Example {
     public static void main(String[] args) {
