@@ -2,7 +2,12 @@ package DataStructure.Graphs;
 
 /**
  * Graph is a data structure that contains a list of nodes or vertex that
- * connected
+ * connected by edges
+ * 
+ * Adjacency List: Every nodes stores a list of adjacent nodes.
+ * 
+ * Ajancency Matrix: (number of nodes)*(number of nodes) matrix boolean or 2d
+ * boolean array
  */
 public class GraphApp {
     public static void main(String[] args) {

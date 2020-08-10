@@ -4,7 +4,7 @@ package SOLID.InterfaceSegregation;
  * When we create a interface and implement this interface. We should have use
  * all the features that are inside that interface
  */
-public class IntegerSegregation_Bad_Example {
+public class InterfaceSegregation_Bad_Example {
     public static void main(String[] args) {
 
     }
@@ -15,9 +15,9 @@ interface Ifeatures_Bad_Examples {
 
     public void write();
 
-    public abstract void run();
+    public void run();
 
-    public abstract void sleep();
+    public void sleep();
 }
 
 class Person1_Bad_Example implements Ifeatures_Bad_Examples {

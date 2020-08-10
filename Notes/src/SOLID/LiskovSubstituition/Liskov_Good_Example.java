@@ -21,11 +21,11 @@ class Swimming_Bird {
     public void Swim() {
         System.out.println("I can Swim...");
     }
-
 }
 
 class Good_Example_Peguin extends Swimming_Bird {
 }
 
 class Good_Example_Eagle extends Flying_Bird {
+
 }
