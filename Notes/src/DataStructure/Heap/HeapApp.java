@@ -2,8 +2,8 @@ package DataStructure.Heap;
 
 /**
  * Heap or Binary heap has min heap and max heap. Min heap basically means that
- * each node is smaller than its children. Max heap means that each node is
- * bigger than its children
+ * each node is smaller than or equal to its children. Max heap means that each
+ * node is bigger than or equal to its children
  */
 public class HeapApp {
     public static void main(String[] args) {
