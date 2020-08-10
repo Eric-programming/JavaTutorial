@@ -1,5 +1,9 @@
 package Algorithms.Searching.DFS;
 
+/**
+ * In depth-first search (DFS), we explore each branch completely before moving
+ * on to the next branch.
+ */
 public class DFSApp {
     public static void main(String args[]) {
         // Undirectional Graph

@@ -37,7 +37,7 @@ public class BFS {
         }
     }
 
-    public void BFSMethod(int source) {
+    public void BFSTraverse(int source) {
         Queue<Integer> storage = new LinkedList<>();
         Set<Integer> visited = new HashSet<>();
         // Traverse the graph

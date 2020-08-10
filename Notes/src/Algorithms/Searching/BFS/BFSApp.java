@@ -1,5 +1,9 @@
 package Algorithms.Searching.BFS;
 
+/**
+ * In breadth-first search (BFS), we first explore each neighbor before going on
+ * to any of their children.
+ */
 public class BFSApp {
     public static void main(String args[]) {
         BFS g = new BFS();
@@ -15,7 +19,7 @@ public class BFSApp {
 
         System.out.println("Following is Breadth First Traversal (starting from vertex 2)");
 
-        g.BFSMethod(2);// 2 1 3 4
+        g.BFSTraverse(2);// 2 1 3 4
 
         System.out.println("Following is Breadth First Traversal Advanced (starting from vertex 2)");
 
@@ -36,7 +40,7 @@ public class BFSApp {
         g1.addEdge(1, 3);
         g1.addEdge(1, 2);
 
-        g1.BFSMethod(2);// 2 1 3 0 4
+        g1.BFSTraverse(2);// 2 1 3 0 4
 
     }
 }
