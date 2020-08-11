@@ -1,33 +1,35 @@
 package Algorithms.Searching.InterpolationSearch;
 
 /**
- * Binary Search > Interpolation search when the data is not equaly distrubed
+ * Binary Search > Interpolation search when the data is not equaly distributed
  */
 public class InterpolationSearch {
     public static void main(String[] args) {
         // Equations: pos = lowIndex + [ (x-arr[lowIndex])*(highIndex-lowIndex) /
         // (arr[highIndex]-arr[lowIndex]) ]
 
-        int[] intArray = { 2, 4, 6, 8, 10, 12 };// equally distrubed and sorted
+        int[] intArray = { 2, 4, 6, 8, 10, 12 };// equally distributed and sorted
 
         System.out.println("Index for value 6 is " + InterpolationSearchMethod(intArray, 6));
         System.out.println("Index for value 2 is " + InterpolationSearchMethod(intArray, 2));
         System.out.println("Index for value 8 is " + InterpolationSearchMethod(intArray, 8));
         System.out.println("Index for value 12 is " + InterpolationSearchMethod(intArray, 12));
-        System.out.println("Index for value 4 is " + InterpolationSearchMethod(intArray, 4));
+        System.out.println("Index for value 4 is " + InterpolationSearchMethod(intArray, 0));
 
         System.out.println("///////////////////////////////////////////////////////////");
 
-        int[] intArray2 = { 2, 5, 6, 9, 10, 15 };// Not equally distrubed
+        int[] intArray2 = { 2, 5, 6, 9, 10, 15 };// Not equally distributed but sorted
         int low = 0;
         int high = intArray2.length - 1;
         System.out.println("Index for value 2 is " + InterpolationSearchMethodRecur(intArray2, 2, low, high));
-        System.out.println("Index for value 5 is " + InterpolationSearchMethodRecur(intArray2, 5, low, high));
-        System.out.println("Index for value 6 is " + InterpolationSearchMethodRecur(intArray2, 6, low, high));
-        System.out.println("Index for value 15 is " + InterpolationSearchMethodRecur(intArray2, 15, low, high));
-        System.out.println("Index for value 10 is " + InterpolationSearchMethodRecur(intArray2, 10, low, high));
+        int t = InterpolationSearchMethodRecur(intArray2, 12, low, high);
+        System.out.println("Index for value 5 is " + t);
     }
 
+    /**
+     * 
+     * Time Complexity: O(1)
+     */
     public static int InterpolationSearchMethod(int[] arr, int x) {
         int lowIndex = 0;
         int highIndex = arr.length - 1;
@@ -36,7 +38,7 @@ public class InterpolationSearch {
     }
 
     /**
-     * What if the array is not equally distrubed?
+     * What if the array is not equally distributed?
      */
     public static int InterpolationSearchMethodRecur(int[] arr, int x, int lowIndex, int highIndex) {
         if (lowIndex <= highIndex && x >= arr[lowIndex] && x <= arr[highIndex]) {

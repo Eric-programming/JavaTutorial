@@ -28,15 +28,15 @@ public class BinarySearch {
     public static void main(String[] args) {
         // Data Must be sorted
         long[] items = new long[] { 1, 2, 3, 4, 5, 6, 7, 8 };
-        // System.out.println(BinarySearchMethod(items, items[3]));
-        System.out.println(BinarySearchMethod(items, Long.valueOf(8)));
+        System.out.println(BinarySearchMethod(items, items[3]));
+        // System.out.println(BinarySearchMethod(items, Long.valueOf(8)));
 
     }
 
     public static int BinarySearchMethod(long[] a, long x) {
         int first = 0;
         int last = a.length - 1;
-        int mid = 0;
+        int mid;
         while (first < last) {
             mid = (last + (first - last) / 2);// Round up
             if (a[mid] == x) {

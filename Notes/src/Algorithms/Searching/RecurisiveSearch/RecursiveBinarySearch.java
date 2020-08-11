@@ -42,6 +42,5 @@ public class RecursiveBinarySearch {
             }
         }
         return -1;
-
     }
 }

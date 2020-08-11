@@ -25,7 +25,7 @@ public class RecursiveLinearSearch {
      */
     public static int RecursiveLinearSearchMethod(long[] a, int i, long x) {
         if (i > a.length - 1) {
-            return -1;
+            return -1;// not found
         } else if (a[i] == x) {
             return i;
         } else {
