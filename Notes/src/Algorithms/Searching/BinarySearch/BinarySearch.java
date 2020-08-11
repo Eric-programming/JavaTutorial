@@ -20,6 +20,9 @@ package Algorithms.Searching.BinarySearch;
  * c. if a[mid] > x then last = mid. else if a[mid] < x then first = mid
  * 
  * 3) return -1
+ * 
+ * 
+ * Time complexity: Log(n)
  */
 public class BinarySearch {
     public static void main(String[] args) {
