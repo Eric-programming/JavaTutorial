@@ -18,7 +18,7 @@ public class BFS {
         map.get(source).add(destination);
     }
 
-    public void BFSRecur(int source, Set<Integer> visited, Queue<Integer> storage) {
+    private void BFSRecur(int source, Set<Integer> visited, Queue<Integer> storage) {
         // Mark the current node as visited and print it
         visited.add(source);
         System.out.println(source);

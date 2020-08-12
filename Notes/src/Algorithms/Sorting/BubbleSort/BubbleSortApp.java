@@ -8,7 +8,7 @@ import java.util.Arrays;
  */
 public class BubbleSortApp {
     public static void main(String[] args) {
-        int[] intArr = { 6, 4, 1, 2, 5 };
+        int[] intArr = { 6, 4, 1, 2, 5 };// 12456
         System.out.println(Arrays.toString(BubbleSortMethod(intArr)));
     }
 
@@ -33,8 +33,9 @@ public class BubbleSortApp {
     public static int[] BubbleSortMethod(int[] a) {
         int iterations = a.length - 1;
         while (iterations > 0) {
-            for (int i = 0; i < iterations - 1; i++) {
+            for (int i = 0; i <= iterations - 1; i++) {
                 if (a[i] > a[i + 1]) {
+                    // swap
                     int temp = a[i];
                     a[i] = a[i + 1];
                     a[i + 1] = temp;

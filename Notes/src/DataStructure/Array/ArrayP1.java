@@ -3,7 +3,7 @@ package DataStructure.Array;
 import java.util.ArrayList;
 
 //Array: a group of similar type variables. It can contains primitives and non-primitivies
-//ex. int[] name = new int[2];
+//ex. int[] example = new int[2];
 //ex. int[] name = {1,2,3,4,5};
 //ex. int[] name = new int[6] {1,2,3,4,5,6};
 public class ArrayP1 {
