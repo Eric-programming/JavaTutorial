@@ -2,6 +2,10 @@ package Algorithms.Sorting.BubbleSort;
 
 import java.util.Arrays;
 
+/**
+ * Bubble sort is a sorting algo to continously swapping the adjacent elements
+ * if they are in wrong order
+ */
 public class BubbleSortApp {
     public static void main(String[] args) {
         int[] intArr = { 6, 4, 1, 2, 5 };

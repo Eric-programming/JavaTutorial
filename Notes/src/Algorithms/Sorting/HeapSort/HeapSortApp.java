@@ -2,9 +2,12 @@ package Algorithms.Sorting.HeapSort;
 
 import java.util.Arrays;
 
-//Formula find left child: 2n+1
-//Formula find right child: 2n+2
-//Formula find parent index: Math.floor((n-1)/2)
+/**
+ * Heap sort is a sorting algo to sort Binary Heap data structure.
+ */
+// Formula find left child: 2n+1
+// Formula find right child: 2n+2
+// Formula find parent index: Math.floor((n-1)/2)
 public class HeapSortApp {
     public static void main(String[] args) {
         int arr[] = { 12, 11, 13, 5, 6, 7 };
@@ -46,15 +49,15 @@ public class HeapSortApp {
         int l = 2 * i + 1; // left = 2*i + 1
         int r = 2 * i + 2; // right = 2*i + 2
 
-        // If left child is larger than root
+        // If left child is larger than its parent
         if (l < n && arr[l] > arr[largest])
             largest = l;
 
-        // If right child is larger than largest so far
+        // If right child is larger than its parent
         if (r < n && arr[r] > arr[largest])
             largest = r;
 
-        // If largest is not root
+        // If the value of largest changed
         if (largest != i) {
             swap(arr, largest, i);
 

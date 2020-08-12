@@ -23,7 +23,7 @@ public class DFS {
         map.get(source).add(destination);
     }
 
-    public void DFSRecur(int source, Set<Integer> visited) {
+    private void DFSRecur(int source, Set<Integer> visited) {
         // Mark the current node as visited and print it
         visited.add(source);
         System.out.println(source);
