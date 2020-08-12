@@ -7,13 +7,13 @@ import java.util.Map;
 
 //Vertex and Edges
 public class GraphClass<T> {
-    private Map<T, List<T>> map;
-    private boolean undirectional;
+    protected Map<T, List<T>> map;
+    protected boolean undirectional;
 
     public GraphClass(boolean isUndirectional) {
         super();
         map = new HashMap<>();
-        undirectional = isUndirectional;
+        undirectional = isUndirectional;// false = directional and true = undirectional
     }
 
     public void addVertex(T v) {
