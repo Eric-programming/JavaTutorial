@@ -11,7 +11,6 @@ public class HeapApp {
         MaxHeap mh = new MaxHeap(length);
         for (int i = 0; i < length; i++) {
             mh.insert(i);
-
         }
         System.out.println("/////////////////////////////////");
         mh.printMaxHeap();
@@ -19,7 +18,7 @@ public class HeapApp {
          * 43102
          */
         System.out.println("/////////////////////////////////");
-        mh.delete();// delete max value
+        mh.delete(2);// delete max value
         mh.printMaxHeap();
         /**
          * 3 2 1 0

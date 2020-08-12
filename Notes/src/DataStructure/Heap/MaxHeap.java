@@ -64,8 +64,10 @@ public class MaxHeap {
         if (currentIndex < currentSize) {
             // Find left child and right child
             int leftChildIndex = (currentIndex * 2) + 1;
-            int rightChildIndex = leftChildIndex + 1;
-
+            int rightChildIndex = leftChildIndex + 1;// currentIndex*2 +2
+            if (leftChildIndex > heapArr.length || rightChildIndex > heapArr.length) {
+                return false;
+            }
             if (heapArr[leftChildIndex].getKey() > heapArr[rightChildIndex].getKey()) {
                 swapValue(currentIndex, leftChildIndex);
                 return swapWithLargerChild(heapArr[leftChildIndex], leftChildIndex);
@@ -77,11 +79,11 @@ public class MaxHeap {
         return true;
     }
 
-    public void delete() {
+    public void delete(int index) {
         if (isEmpty()) {
             System.out.println("Sorry, can't delete because it is empty");
         } else {
-            int rootIndex = 0;
+            int rootIndex = index;
             // Replace root with last element
             heapArr[rootIndex] = heapArr[currentSize - 1];
             currentSize -= 1;

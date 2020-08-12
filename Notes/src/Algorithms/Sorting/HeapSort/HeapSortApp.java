@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 /**
  * Heap sort is a sorting algo to sort Binary Heap data structure.
+ * 
+ * Time Complexity: nlogn
  */
 // Formula find left child: 2n+1
 // Formula find right child: 2n+2
