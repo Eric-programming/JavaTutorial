@@ -2,7 +2,7 @@ package Algorithms.Sorting.SelectionSort;
 
 import java.util.Arrays;
 
-//O(n^2)
+// Time Complexity: O(n^2)
 public class SelectionSort {
     public static void main(String[] args) {
         long[] items = new long[] { 3, 4, 2, 1 };
