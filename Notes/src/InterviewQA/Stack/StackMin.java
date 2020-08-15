@@ -21,6 +21,8 @@ import java.util.Stack;
  * StackMin
  */
 public class StackMin extends Stack<Integer> {
+
+    private static final long serialVersionUID = -778822930008732755L;
     private Stack<Integer> minStack;
 
     public StackMin() {
