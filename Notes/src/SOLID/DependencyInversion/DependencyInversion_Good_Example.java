@@ -34,7 +34,7 @@ class Paypal_GoodExample implements IPaymentProcessor {
 
     @Override
     public void makeAPayment(int total) {
-        // TODO Auto-generated method stub
+
         makeAPaymentWithPaypal(total);
     }
 }
@@ -50,7 +50,7 @@ class Stripe_GoodExample implements IPaymentProcessor {
 
     @Override
     public void makeAPayment(int total) {
-        // TODO Auto-generated method stub
+
         makeAPaymentWithStripe(total);
     }
 }

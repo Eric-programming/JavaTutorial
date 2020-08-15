@@ -29,19 +29,16 @@ class Person1_Bad_Example implements Ifeatures_Bad_Examples {
 
     @Override
     public void write() {
-        // TODO Auto-generated method stub
 
     }
 
     @Override
     public void run() {
-        // TODO Auto-generated method stub
 
     }
 
     @Override
     public void sleep() {
-        // TODO Auto-generated method stub
 
     };
 
@@ -62,13 +59,11 @@ class Person2_Bad_Example implements Ifeatures_Bad_Examples {
 
     @Override
     public void run() {
-        // TODO Auto-generated method stub
 
     }
 
     @Override
     public void sleep() {
-        // TODO Auto-generated method stub
 
     };
 
