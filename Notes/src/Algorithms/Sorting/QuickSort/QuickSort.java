@@ -44,38 +44,23 @@ public class QuickSort {
         }
     }
 
-    /**
-     * Procedure Partition(a, f, l)
-     * 
-     * Inputs: a (array), f (first Index), l (last index)
-     * 
-     * Output: Nothing
-     * 
-     * 1) set x = a[l], i = f-1, j = f
-     * 
-     * 2) while j < l then do the followings:
-     * 
-     * 2a) if a[j ] < x then i increment by 1 swap a[i] with a[j]
-     * 
-     * 2b) j increment by 1
-     * 
-     * 3) swap a[i + 1] with a[l] return i + 1
-     */
-    public static int ParitionMethod(long[] a, int f, int l) {
-        long x = a[l];
-        int i = f - 1, j = f;
-        while (j < l) {
+    public static void SwitchPositions(long[] a, int firstIndex, int secondIndex) {
+        long temp = a[firstIndex];
+        a[firstIndex] = a[secondIndex];
+        a[secondIndex] = temp;
+    }
+
+    public static int ParitionMethod(long[] a, int firstIndex, int lastIndex) {
+        long x = a[lastIndex]; // Last index = pivot point
+        int i = firstIndex - 1, j = firstIndex;
+        while (j < lastIndex) {
             if (a[j] < x) {
-                i += 1;
-                long temp = a[i];
-                a[i] = a[j];
-                a[j] = temp;
+                i++;
+                SwitchPositions(a, i, j);
             }
             j += 1;
         }
-        long temp = a[i + 1];
-        a[i + 1] = a[l];// which is x
-        a[l] = temp;
+        SwitchPositions(a, i + 1, lastIndex);// Switch position with the pivot point
         return i + 1;
     }
 }

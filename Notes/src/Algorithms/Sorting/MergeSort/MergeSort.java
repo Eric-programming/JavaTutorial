@@ -2,7 +2,7 @@ package Algorithms.Sorting.MergeSort;
 
 import java.util.Arrays;
 
-//nLog(n)
+//Time Complexity: nLog(n)
 //Pros = fast
 //Cons = takes space (tempLeftArray and temp right array)
 public class MergeSort {
@@ -16,125 +16,77 @@ public class MergeSort {
     public static void main(String[] args) {
         long[] items = new long[] { 3, 4, 2, 1 };
 
-        MergeSortMethod(items, 0, items.length - 1);
+        MergeSortMethod(items, 0, items.length - 1);// 1234
 
         System.out.println(Arrays.toString(items));
         // ===============================================
         long[] items2 = new long[] { 4, 3, 2, 1 };
 
-        MergeSortMethod(items2, 0, items2.length - 1);
+        MergeSortMethod(items2, 0, items2.length - 1);// 1234
 
         System.out.println(Arrays.toString(items2));
         // ===============================================
-        long[] items3 = new long[] { 6, 1, 9, 0, 3, 2 };
+        long[] items3 = new long[] { 6, 1, 0, 3, 2 };// 012369
 
         MergeSortMethod(items3, 0, items3.length - 1);
 
         System.out.println(Arrays.toString(items3));
     }
 
-    /**
-     * 
-     * Procedure Merge (a, f, m, l)
-     * 
-     * Inputs: a (array), f (first index), m(mid index), l (last index)
-     * 
-     * Output: Merge the array
-     * 
-     * 1) set leftSize = m - f + 1, set rightSize = l - m
-     * 
-     * 2) set leftArray with the size of leftSize, set rightArray with the size of
-     * rightSize
-     * 
-     * 3)Copy the data from a[f] to a[mid] to the leftArray
-     * 
-     * 4)Copy the data from a[mid] to a[l] to the rightArray
-     * 
-     * 5) set leftIndex = 0, set rightIndex = 0, set index = f
-     * 
-     * 6) while leftIndex < leftSize and rightIndex < rightSize then do the
-     * followings
-     * 
-     * 6a) if leftArray[leftIndex] < rightArray[rightIndex]
-     * 
-     * then a[index] = leftArray[leftIndex], leftIndex increment by 1
-     * 
-     * 6b) else then a[index] = rightArray[rightIndex], rightIndex increment by 1
-     * 
-     * 6c) index increment by 1
-     * 
-     * 7) Copy remaining value from leftArray to a if any
-     * 
-     * 8) Copy remaining value from rightArray to a if any
-     */
-    public static void Merge(long[] a, int f, int m, int l) {
-        // Create two subarrays
-        int leftSize = m - f + 1;
-        int rightSize = l - m;
+    public static void Merge(long[] a, int firstIndex, int midIndex, int lastIndex) {
+        int leftArrSize = midIndex - firstIndex + 1;
 
-        long[] leftArray = new long[leftSize];
-        long[] rightArray = new long[rightSize];
+        int rightArrSize = lastIndex - midIndex;
 
-        for (int i = 0; i < leftSize; i++) {
-            leftArray[i] = a[i + f];
+        long[] leftArr = new long[leftArrSize];
+        long[] rightArr = new long[rightArrSize];
+
+        // Fill the left and right arr with array a's halves data
+        for (int i = 0; i < leftArr.length; i++) {
+            leftArr[i] = a[firstIndex + i];
         }
-        for (int i = 0; i < rightSize; i++) {
-            rightArray[i] = a[i + m + 1];
+        for (int i = 0; i < rightArr.length; i++) {
+            rightArr[i] = a[midIndex + 1 + i];
         }
 
-        // Sort and merge the arrays
-        int leftIndex = 0, rightIndex = 0, index = f;
-        while (leftIndex < leftSize && rightIndex < rightSize) {
-            if (leftArray[leftIndex] < rightArray[rightIndex]) {
-                a[index] = leftArray[leftIndex];
-                leftIndex += 1;
+        int index = firstIndex, leftIndex = 0, rightIndex = 0;
+
+        // modify the array a
+        while (leftIndex < leftArrSize && rightIndex < rightArrSize) {
+            if (leftArr[leftIndex] > rightArr[rightIndex]) {
+                a[index] = rightArr[rightIndex];
+                rightIndex++;
             } else {
-                a[index] = rightArray[rightIndex];
-                rightIndex += 1;
+                a[index] = leftArr[leftIndex];
+                leftIndex++;
             }
-            index += 1;
+            index++;
         }
 
-        // Clean up the remaining elements
-        while (leftIndex < leftSize) {
-            a[index] = leftArray[leftIndex];
-            leftIndex += 1;
-            index += 1;
+        // Clean up the left or right arr
+
+        while (leftIndex < leftArrSize) {
+            a[index] = leftArr[leftIndex];
+            index++;
+            leftIndex++;
         }
 
-        while (rightIndex < rightSize) {
-            a[index] = rightArray[rightIndex];
-            rightIndex += 1;
-            index += 1;
+        while (rightIndex < rightArrSize) {
+            a[index] = rightArr[rightIndex];
+            index++;
+            rightIndex++;
         }
-
     }
 
-    /**
-     * 
-     * Procedure MergeSortMethod (a, firstIndex, lastIndex)
-     * 
-     * Inputs: a (array)
-     * 
-     * Output: Split the array
-     * 
-     * if(firstIndex < lastIndex) then
-     *
-     * a) set midIndex = (firstIndex+lastIndex)/2
-     * 
-     * b) MergeSortMethod(a, firstIndex, midIndex)
-     * 
-     * c) MergeSortMethod(a, midIndex + 1, lastIndex)
-     * 
-     * d) return merge (arr)
-     */
     public static void MergeSortMethod(long[] a, int firstIndex, int lastIndex) {
         if (firstIndex < lastIndex) {
-            int midIndex = ((firstIndex + lastIndex) / 2);// Round down
-            // Left
+            int midIndex = (firstIndex + lastIndex) / 2;// round down
+            // Sort the first halves
             MergeSortMethod(a, firstIndex, midIndex);
-            // Right
+            // Sort the second halves
             MergeSortMethod(a, midIndex + 1, lastIndex);
+
+            // Merge
             Merge(a, firstIndex, midIndex, lastIndex);
         }
     }
