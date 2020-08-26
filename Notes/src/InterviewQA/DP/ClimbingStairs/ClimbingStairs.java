@@ -51,6 +51,7 @@ public class ClimbingStairs {
         if (n <= 3) {
             return n;
         }
+
         // From now on: n >= 4
 
         int p2 = 2, p1 = 3, i;
