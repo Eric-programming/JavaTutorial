@@ -25,7 +25,7 @@ public class MergeSort {
         System.out.println(Arrays.toString(items2));
 
         // ===============================================
-        int[] items3 = { 6, 1, 0, 3, 2 };// 012369
+        int[] items3 = { 6, 1, 0, 3, 2 };// 01236
         items3 = merge_sort(items3);
         System.out.println(Arrays.toString(items3));
     }
@@ -46,7 +46,7 @@ public class MergeSort {
 
         while (left_cursor < left_list.length && right_cursor < right_list.length) {
             if (left_list[left_cursor] < right_list[right_cursor]) {
-                finalArr[final_cursor++] = left_list[left_cursor++];
+                finalArr[final_cursor++] = left_list[left_cursor++];// i++ vs ++i
             } else {
                 finalArr[final_cursor++] = right_list[right_cursor++];
             }
