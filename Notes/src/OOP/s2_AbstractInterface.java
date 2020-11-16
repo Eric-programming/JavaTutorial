@@ -65,5 +65,6 @@ public class s2_AbstractInterface {
      * functionality that child class can use or override. An interface only allows
      * you to define functionality, not implement them. And whereas a class can
      * extend only one abstract class, it can take advantage of multiple interfaces.
+     *
      */
 }
