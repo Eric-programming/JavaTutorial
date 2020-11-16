@@ -13,8 +13,8 @@ public class s6_Polymorphism {
 
     public static void main(String[] args) {
         // Overloading
-        Employee emp = new Employee("Frank", 29);
-        emp.getCurEmp();
+        // Employee emp = new Employee("Frank", 29);
+        // emp.getCurEmp();
 
         // Overriding
         User user = new User();

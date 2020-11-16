@@ -10,8 +10,6 @@ import java.util.List;
  * 
  * - Abstract Classes can't be instantiated but we can instantiate a child class
  * that is inherited from Abstract Classes
- * 
- * -
  */
 public class s1_AbstractClasses {
     public static void main(String[] args) {

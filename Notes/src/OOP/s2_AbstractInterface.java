@@ -49,8 +49,7 @@ public class s2_AbstractInterface {
     }
     /**
      * When to use what?
-     * 
-     * Abstract class is the option if we need base class
+     *
      * 
      * If you need to provide some implementation or need a base class, then an
      * abstract class is the good option. For example, if we want to initialize
@@ -60,11 +59,6 @@ public class s2_AbstractInterface {
      * If you need to add additional behavior for your classes, then interfaces are
      * a good option.
      * 
-     * 
-     * Both have some similarities. An abstract class allows you to make
-     * functionality that child class can use or override. An interface only allows
-     * you to define functionality, not implement them. And whereas a class can
-     * extend only one abstract class, it can take advantage of multiple interfaces.
      *
      */
 }

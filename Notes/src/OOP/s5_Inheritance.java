@@ -37,6 +37,10 @@ public class s5_Inheritance {
         public Eagle() {
             name = "eagle";
         }
+
+        public void birdJump() {
+            System.out.println("Jump");
+        }
     }
 
     static class Tiger extends Animal {
