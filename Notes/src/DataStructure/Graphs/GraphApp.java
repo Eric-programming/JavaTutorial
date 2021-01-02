@@ -1,4 +1,4 @@
-package DataStructure.Graphs;
+package Graphs;
 
 /**
  * Graph is a data structure that contains a list of nodes or vertex that

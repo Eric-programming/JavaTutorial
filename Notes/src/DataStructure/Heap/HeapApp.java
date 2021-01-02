@@ -1,4 +1,4 @@
-package DataStructure.Heap;
+package Heap;
 
 /**
  * Heap or Binary heap has min heap and max heap. Min heap basically means that

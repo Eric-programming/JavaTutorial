@@ -1,4 +1,4 @@
-package DataStructure.DynamicArray;
+package DynamicArray;
 
 /**
  * Dynamic Array is an array that can resize itself instead of fixed length. It

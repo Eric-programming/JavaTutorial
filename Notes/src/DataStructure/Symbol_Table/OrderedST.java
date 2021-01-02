@@ -1,3 +1,5 @@
+package Symbol_Table;
+
 import java.util.List;
 
 //Symbol Table

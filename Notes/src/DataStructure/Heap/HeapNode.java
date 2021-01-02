@@ -1,4 +1,4 @@
-package DataStructure.Heap;
+package Heap;
 
 public class HeapNode {
     private int key;

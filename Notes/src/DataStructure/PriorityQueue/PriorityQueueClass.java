@@ -1,6 +1,5 @@
-package DataStructure.PriorityQueue;
+package PriorityQueue;
 
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.PriorityQueue;
 

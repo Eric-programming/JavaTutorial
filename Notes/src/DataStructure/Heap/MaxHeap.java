@@ -1,4 +1,4 @@
-package DataStructure.Heap;
+package Heap;
 
 //Formula find left child: 2n+1
 //Formula find right child: 2n+2

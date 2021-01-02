@@ -1,4 +1,4 @@
-package DataStructure.LinkedList.SinglyLinkedList;
+package LinkedList.SinglyLinkedList;
 
 /**
  * Singly linked list is a data structure that is a sequence of nodes, and each
