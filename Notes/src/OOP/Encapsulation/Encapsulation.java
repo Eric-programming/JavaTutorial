@@ -1,11 +1,7 @@
-package OOP;
+package OOP.Encapsulation;
 
-/**
- * We can use encapsulation to change the access modifier to protect the fields
- * of a class
- */
-public class s4_Encapsulation {
-    static class Product {
+public class Encapsulation {
+    public static class Product {
         private int price;
 
         // Getter methods
