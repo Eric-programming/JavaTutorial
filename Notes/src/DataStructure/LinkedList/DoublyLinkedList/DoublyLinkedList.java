@@ -1,6 +1,6 @@
-package LinkedList.DoublyLinkedList;
+package DataStructure.LinkedList.DoublyLinkedList;
 
-import LinkedList.DoublyNode;
+import DataStructure.LinkedList.DoublyNode;
 
 //Most Common because features of Next & Previous
 public class DoublyLinkedList<T> {

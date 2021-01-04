@@ -1,4 +1,4 @@
-package Symbol_Table;
+package DataStructure.Symbol_Table;
 
 public interface UnorderedST<Key, Value> {
 

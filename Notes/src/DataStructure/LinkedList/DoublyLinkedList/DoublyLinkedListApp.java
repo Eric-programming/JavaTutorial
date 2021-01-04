@@ -1,4 +1,4 @@
-package LinkedList.DoublyLinkedList;
+package DataStructure.LinkedList.DoublyLinkedList;
 
 public class DoublyLinkedListApp {
     public static void main(String[] args) {

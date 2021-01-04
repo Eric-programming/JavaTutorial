@@ -1,4 +1,4 @@
-package LinkedList.CircularLinkedList;
+package DataStructure.LinkedList.CircularLinkedList;
 
 public class CircularLinkedListApp {
     public static void main(String[] args) {

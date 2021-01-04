@@ -1,4 +1,4 @@
-package String;
+package DataStructure.String;
 
 /**
  * String is basically Arrays of Unicode Characters

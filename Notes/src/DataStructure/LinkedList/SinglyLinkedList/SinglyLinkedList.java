@@ -1,6 +1,6 @@
-package LinkedList.SinglyLinkedList;
+package DataStructure.LinkedList.SinglyLinkedList;
 
-import LinkedList.NodeClass;
+import DataStructure.LinkedList.NodeClass;
 
 public class SinglyLinkedList<T> {
     private NodeClass<T> firstNode;

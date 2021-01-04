@@ -1,4 +1,4 @@
-package PriorityQueue;
+package DataStructure.PriorityQueue;
 
 import java.util.Iterator;
 import java.util.PriorityQueue;

@@ -1,4 +1,4 @@
-package Symbol_Table;
+package DataStructure.Symbol_Table;
 
 import java.util.List;
 

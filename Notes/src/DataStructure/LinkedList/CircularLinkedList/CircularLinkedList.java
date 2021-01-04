@@ -1,6 +1,6 @@
-package LinkedList.CircularLinkedList;
+package DataStructure.LinkedList.CircularLinkedList;
 
-import LinkedList.NodeClass;
+import DataStructure.LinkedList.NodeClass;
 
 public class CircularLinkedList<T> {
     private NodeClass<T> head;

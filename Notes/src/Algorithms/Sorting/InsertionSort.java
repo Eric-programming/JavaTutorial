@@ -1,7 +1,9 @@
+package Algorithms.Sorting;
+
 import java.util.Arrays;
 
-import AbstractClass.Sort;
-import Tools.Test;
+import Algorithms.Sorting.AbstractClass.Sort;
+import Algorithms.Sorting.Tools.Test;
 
 public class InsertionSort<T extends Comparable<T>> extends Sort<T> {
 

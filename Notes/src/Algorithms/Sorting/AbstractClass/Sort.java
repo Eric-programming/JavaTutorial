@@ -1,7 +1,8 @@
+package Algorithms.Sorting.AbstractClass;
+
 /**
  * Sort
  */
-package AbstractClass;
 
 public abstract class Sort<T extends Comparable<T>> {
 

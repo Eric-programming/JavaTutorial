@@ -1,7 +1,9 @@
+package Algorithms.Sorting;
+
 import java.util.Arrays;
 
-import Tools.Test;
-import AbstractClass.Sort;
+import Algorithms.Sorting.AbstractClass.Sort;
+import Algorithms.Sorting.Tools.Test;
 
 public class BubbleSort<T extends Comparable<T>> extends Sort<T> {
 
