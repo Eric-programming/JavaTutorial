@@ -17,7 +17,6 @@ public class Encapsulation {
                 System.out.println("Sorry, " + price + " is outside of the range");
             }
         }
-
     }
 
     public static void main(String[] args) {

@@ -1,10 +1,6 @@
-package OOP;
+package OOP.Abstraction;
 
-/**
- * Interface can have only static, final, and public fields and abstract
- * methods.
- */
-public class s2_AbstractInterface {
+public class Interface {
     interface Animal {
         public void eat();
 
@@ -47,18 +43,4 @@ public class s2_AbstractInterface {
         myEagle.printNoLegs();
 
     }
-    /**
-     * When to use what?
-     *
-     * 
-     * If you need to provide some implementation or need a base class, then an
-     * abstract class is the good option. For example, if we want to initialize
-     * variables in the base class for all the derived classes to use. We can do
-     * this using abstract class
-     * 
-     * If you need to add additional behavior for your classes, then interfaces are
-     * a good option.
-     * 
-     *
-     */
 }

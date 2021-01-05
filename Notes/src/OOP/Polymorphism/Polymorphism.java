@@ -1,20 +1,18 @@
-package OOP;
+package OOP.Polymorphism;
 
 /**
- * s6_Polymorphism
  * 
  * Polymorphism allows us to have many methods with same name but different
  * characteristics.
  * 
  * Two Ways to use polymorphism: overloading and method overriding.
- * 
  */
-public class s6_Polymorphism {
+public class Polymorphism {
 
     public static void main(String[] args) {
         // Overloading
-        // Employee emp = new Employee("Frank", 29);
-        // emp.getCurEmp();
+        Employee emp = new Employee("Frank", 29);
+        emp.getCurEmp();
 
         // Overriding
         User user = new User();
