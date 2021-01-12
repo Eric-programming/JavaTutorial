@@ -1,13 +1,9 @@
-package OOP;
+package OOP.Inheritance;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * s5_Inheritance
- */
-public class s5_Inheritance {
-
+public class Inheritance {
     public static void main(String[] args) {
         Eagle eagle = new Eagle();
         Tiger tiger = new Tiger();
