@@ -1,112 +1,131 @@
 package DataStructure.Heap;
 
-//Formula find left child: 2n+1
-//Formula find right child: 2n+2
-//Formula find parent index: Math.floor((n-1)/2)
+import java.util.ArrayList;
+import java.util.List;
+
+//Formula find left child: 2i+1
+//Formula find right child: 2i+2
+//Formula find parent index: ((i - 1) / 2)
 public class MaxHeap {
-    private HeapNode[] heapArr;
-    private int currentSize;// Current nodes in arr
+    public static void main(String[] args) {
+        int[] arr = { 100, -1000, 10000, -10, 10001 };
+        MaxHeap mh = new MaxHeap();
+        for (int item : arr) {
+            mh.add(item);
+        }
+        mh.print();
 
-    public MaxHeap(int size) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println("We remove => " + mh.poll());
+            mh.print();
+        }
+
+    }
+
+    private List<Integer> list;
+
+    public MaxHeap() {
         super();
-        heapArr = new HeapNode[size];
-        currentSize = 0;
+        list = new ArrayList<>();
     }
 
-    public int getHeapSize() {
-        return heapArr.length;
+    public int peek() {
+        if (list.size() == 0)
+            throw new IllegalStateException();
+        return list.get(0);
     }
 
-    public boolean isEmpty() {
-        return currentSize == 0;
-    }
-
-    public boolean isFull() {
-        return currentSize >= heapArr.length;
-    }
-
-    public void insert(int key) {
-        if (isFull()) {
-            System.out.println("Sorry, can't insert because the heap is full");
-        } else {
-            // Create the node
-            HeapNode newNode = new HeapNode(key);
-            // assign the new node to the end of the heap
-            heapArr[currentSize] = newNode;
-            // Compare the node with their parent node to insert correctly
-            compareWithParentNode(newNode, currentSize);
-            // Increment the index
-            currentSize += 1;
+    public int poll() {
+        if (list.size() == 0)
+            throw new IllegalStateException();
+        int item = list.get(0);
+        if (list.size() == 1) {
+            list.remove(0);
+            return item;
         }
+        int lastIndex = list.size() - 1;
+        int lastItem = list.get(lastIndex);
+        list.set(0, lastItem);
+        list.remove(lastIndex);
+        heapifyDown();
+        return item;
     }
 
-    private boolean compareWithParentNode(HeapNode node, int currentIndex) {
-        // Compare the value of this node with its parent
-        int parentIndex = (currentIndex - 1) / 2;
-        // Equal or less than parent value
-        if (heapArr[parentIndex].getKey() >= heapArr[currentIndex].getKey()) {
-            return true;
-        } else {
-            // If value of parent is less than child then swap them
-            swapValue(currentIndex, parentIndex);
-            // Recur
-            return compareWithParentNode(node, parentIndex);
-        }
+    public void add(int item) {
+        list.add(item);
+        heapifyUp();
     }
 
-    private void swapValue(int fIndex, int sIndex) {
-        HeapNode temp = heapArr[fIndex];
-        heapArr[fIndex] = heapArr[sIndex];
-        heapArr[sIndex] = temp;
-    }
-
-    private boolean swapWithLargerChild(HeapNode node, int currentIndex) {
-        if (currentIndex < currentSize) {
-            // Find left child and right child
-            int leftChildIndex = (currentIndex * 2) + 1;
-            int rightChildIndex = leftChildIndex + 1;// currentIndex*2 +2
-            if (leftChildIndex > heapArr.length || rightChildIndex > heapArr.length) {
-                return false;
-            }
-            if (heapArr[leftChildIndex].getKey() > heapArr[rightChildIndex].getKey()) {
-                swapValue(currentIndex, leftChildIndex);
-                return swapWithLargerChild(heapArr[leftChildIndex], leftChildIndex);
+    private void heapifyDown() {
+        int curIndex = 0;
+        int left = hasLeftChild(curIndex) ? leftChild(curIndex) : Integer.MIN_VALUE;
+        int right = hasRightChild(curIndex) ? rightChild(curIndex) : Integer.MIN_VALUE;
+        while (Math.max(left, right) > list.get(curIndex)) {
+            if (left > right) {
+                swap(curIndex, getLeftChildIndex(curIndex));
+                curIndex = getLeftChildIndex(curIndex);
             } else {
-                swapValue(currentIndex, rightChildIndex);
-                return swapWithLargerChild(heapArr[rightChildIndex], rightChildIndex);
+                swap(curIndex, getRightChildIndex(curIndex));
+                curIndex = getRightChildIndex(curIndex);
             }
-        }
-        return true;
-    }
-
-    public void delete(int index) {
-        if (isEmpty()) {
-            System.out.println("Sorry, can't delete because it is empty");
-        } else {
-            int rootIndex = index;
-            // Replace root with last element
-            heapArr[rootIndex] = heapArr[currentSize - 1];
-            currentSize -= 1;
-            // swap the largest child with the root value
-            swapWithLargerChild(heapArr[rootIndex], rootIndex);
+            left = hasLeftChild(curIndex) ? leftChild(curIndex) : Integer.MIN_VALUE;
+            right = hasRightChild(curIndex) ? rightChild(curIndex) : Integer.MIN_VALUE;
         }
     }
 
-    public void printMaxHeap() {
-        printMaxHeapMethod(0, 1);
+    private void heapifyUp() {
+        int curIndex = list.size() - 1;
+        int curVal = list.get(curIndex);
+        while (hasParent(curIndex) && parent(curIndex) < curVal) {
+            swap(getParentIndex(curIndex), curIndex);
+            curIndex = getParentIndex(curIndex);
+        }
     }
 
-    private void printMaxHeapMethod(int startIndex, int endIndex) {
-        if (startIndex < heapArr.length) {
-            String s = "( ";
-            for (int j = startIndex; j < endIndex && j < currentSize; j++) {
-                s += heapArr[j].getKey() + " ";
-            }
-            s += ")";
-            System.out.println(s);
-            printMaxHeapMethod(endIndex, endIndex + (int) Math.pow(2, endIndex));
-        }
+    private int getLeftChildIndex(int parentIndex) {
+        return 2 * parentIndex + 1;
+    }
 
+    private int getRightChildIndex(int parentIndex) {
+        return 2 * parentIndex + 2;
+    }
+
+    private int getParentIndex(int index) {
+        return (index - 1) / 2;
+    }
+
+    private boolean hasLeftChild(int index) {
+        return getLeftChildIndex(index) < list.size();
+    }
+
+    private boolean hasRightChild(int index) {
+        return getRightChildIndex(index) < list.size();
+    }
+
+    private boolean hasParent(int index) {
+        return getParentIndex(index) >= 0;
+    }
+
+    private int leftChild(int index) {
+        return list.get(getLeftChildIndex(index));
+    }
+
+    private int rightChild(int index) {
+        return list.get(getRightChildIndex(index));
+    }
+
+    private int parent(int index) {
+        return list.get(getParentIndex(index));
+    }
+
+    private void swap(int aIndex, int bIndex) {
+        int temp = list.get(aIndex);
+        list.set(aIndex, list.get(bIndex));
+        list.set(bIndex, temp);
+    }
+
+    public void print() {
+        System.out.println(list.toString());
     }
 
 }
