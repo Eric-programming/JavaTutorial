@@ -10,8 +10,8 @@ public class HashTableClass<Key, Value> implements UnorderedST<Key, Value> {
 
     public static void main(String[] args) {
         HashTableClass<Integer, Integer> ht = new HashTableClass<>();
-        for (int i = 0; i < 100; i += 10) {
-            ht.put(i, i * 100);
+        for (int i = 0; i < 100; i++) {
+            ht.put(i, i + 1);
         }
         // Delete
         System.out.println(ht.get(0));
@@ -85,6 +85,7 @@ public class HashTableClass<Key, Value> implements UnorderedST<Key, Value> {
             return;
         if (cur.key == key) {
             store.set(hashcodeIndex, cur.next);
+            return;
         }
         Node pre = cur;
         cur = cur.next;
@@ -93,6 +94,8 @@ public class HashTableClass<Key, Value> implements UnorderedST<Key, Value> {
                 pre.next = cur.next;
                 return;
             }
+            pre = cur;
+            cur = cur.next;
         }
     }
 
