@@ -3,17 +3,12 @@ package Thread;
 public class Multithreading {
 
 	public static void main(String[] args) {
-		int n = 8; // Number of threads
-		for (int i = 0; i < n; i++) {
-			MultithreadingDemo multi = new MultithreadingDemo();
-			multi.start();
-		}
+		Thread t1 = new MultithreadingDemo();
+		t1.start();
+	
+		Thread t2 = new Thread(new MultithreadingDemo());
+		t2.start();
 
-		int n1 = 8; // Number of threads
-		for (int i = 0; i < n1; i++) {
-			Thread object = new Thread(new MultithreadingDemo());
-			object.start();
-		}
 	}
 
 }
